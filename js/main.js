@@ -76,14 +76,10 @@ window.onload = function() {
             player.body.velocity.y = -350;
         }
     }
-    function collectDogs(player, dogs) {
     
-    // Removes the star from the screen
+    function collectDogs(player, dogs) {
     dogs.kill();
-
-    //  Add and update the score
     score += 10;
     scoreText.text = 'Score: ' + score;
-
-}
+    }
 };
