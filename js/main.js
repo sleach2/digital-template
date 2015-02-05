@@ -28,6 +28,7 @@ window.onload = function() {
     var player;
     var score = 0;
     var scoreText;
+    var cursors;
     
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
