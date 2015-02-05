@@ -23,6 +23,7 @@ window.onload = function() {
     }
     
     var bouncy;
+    var platforms;
     
     function create() {
         game.add.sprite(0,0,'sky');
