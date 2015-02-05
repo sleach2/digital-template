@@ -57,12 +57,12 @@ window.onload = function() {
     }
     
     function abc(){
-        for (var i = 0; i < 6; i++){
+        for (var i = 0; i < Math.random(); i++){
         var dog = dogs.create(i*140, 0, 'dog');
         dog.body.gravity.y = 75;
         }
     }
-    
+
     function update() {
         game.physics.arcade.collide(player, platforms);
         game.physics.arcade.overlap(player, dogs, collectDogs, null, this);
