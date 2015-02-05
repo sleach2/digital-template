@@ -52,7 +52,7 @@ window.onload = function() {
         dogs = game.add.group();
         dogs.enableBody = true;
         for (var i = 0; i < 12; i++){
-        var dogs = dogs.create(i * 70, 0, 'dog');
+        var dog = dogs.create(i * 70, 0, 'dog');
         dogs.body.gravity.y = 150;
         }
         scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
