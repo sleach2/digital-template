@@ -22,7 +22,7 @@ window.onload = function() {
         game.load.image('ground', 'assets/platform.png');
         game.load.image('dog', 'assets/dog.png');
         game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
-        game.load.audio('boden', 'assets/audio/bodenstaendig_2000_in_rock_4bit.mp3');
+        game.load.audio('boden', 'assets/bodenstaendig_2000_in_rock_4bit.mp3');
     }
     
     //var bouncy;
