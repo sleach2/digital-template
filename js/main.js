@@ -54,7 +54,7 @@ window.onload = function() {
         dogs = game.add.group();
         dogs.enableBody = true;
         game.time.events.repeat(Phaser.Timer.SECOND * 2, 10, abc, this);
-        scoreText = game.add.text(16, 16, 'score: ', { fontSize: '32px', fill: '#000' });
+        scoreText = game.add.text(16, 16, 'score: '+score, { fontSize: '32px', fill: '#000' });
     }
     
     function abc(){
