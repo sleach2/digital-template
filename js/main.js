@@ -20,6 +20,7 @@ window.onload = function() {
         //game.load.image( 'logo', 'assets/phaser.png' );
         game.load.image('sky', 'assets/sky.png');
         game.load.image('ground', 'assets/platform.png');
+        game.load.image('dog', 'assets/dog.png');
         game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
     }
     
@@ -29,6 +30,7 @@ window.onload = function() {
     var score = 0;
     var scoreText;
     var cursors;
+    var dogs;
     
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -47,6 +49,12 @@ window.onload = function() {
         player.animations.add('right', [5, 6, 7, 8], 10, true);
         scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
         cursors = game.input.keyboard.createCursorKeys();
+        dogs = game.add.group();
+        dogs.enableBody = true;
+        for (var i = 0; i < 12; i++){
+        var dogs = dogs.create(i * 70, 0, 'dog');
+        dogs.body.gravity.y = 300;
+        }
     }
     
     function update() {
