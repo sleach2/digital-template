@@ -32,9 +32,10 @@ window.onload = function() {
     var scoreText;
     var cursors;
     var dogs;
+    var music;
     
     function create() {
-        var music=game.add.audio('boden');
+        music=game.add.audio('boden');
         music.play();
         game.physics.startSystem(Phaser.Physics.ARCADE);
         game.add.sprite(0,0,'sky');
