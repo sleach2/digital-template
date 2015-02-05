@@ -80,6 +80,6 @@ window.onload = function() {
     function collectDogs(player, dog) {
     dog.kill();
     score += 10;
-    scoreText.text == 'Score: ' + score;
+    scoreText.text = 'Score: ' + score;
     }
 };
