@@ -77,8 +77,8 @@ window.onload = function() {
         }
     }
 
-    function collectDogs(player, dogs) {
-    dogs.kill();
+    function collectDogs(player, dog) {
+    dog.kill();
     score += 10;
     scoreText.text = 'Score: ' + score;
     }
