@@ -52,11 +52,15 @@ window.onload = function() {
         cursors = game.input.keyboard.createCursorKeys();
         dogs = game.add.group();
         dogs.enableBody = true;
+        game.time.events.repeat(Phaser.Timer.SECOND * 2, 10, abc, this);
+        scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+    }
+    
+    function abc(){
         for (var i = 0; i < 6; i++){
         var dog = dogs.create(i*140, 0, 'dog');
         dog.body.gravity.y = 75;
         }
-        scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
     }
     
     function update() {
@@ -81,6 +85,6 @@ window.onload = function() {
     function collectDogs(player, dog) {
     dog.kill();
     score += 10;
-    scoreText.text = 'Score: ' + score;
+    scoreText.text = 'score: ' + score;
     }
 };
