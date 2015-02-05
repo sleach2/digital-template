@@ -20,10 +20,14 @@ window.onload = function() {
         //game.load.image( 'logo', 'assets/phaser.png' );
         game.load.image('sky', 'assets/sky.png');
         game.load.image('ground', 'assets/platform.png');
+        game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
     }
     
     //var bouncy;
     var platforms;
+    var player;
+    var score = 0;
+    var scoreText;
     
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -33,6 +37,13 @@ window.onload = function() {
         var ground = platforms.create(0, game.world.height - 64, 'ground');
         ground.scale.setTo(2, 2);
         ground.body.immovable = true;
+        player = game.add.sprite(32, game.world.height - 150, 'dude');
+        game.physics.arcade.enable(player);
+        player.body.bounce.y = 0.2;
+        player.body.gravity.y = 300;
+        player.body.collideWorldBounds = true;
+        player.animations.add('left', [0, 1, 2, 3], 10, true);
+        player.animations.add('right', [5, 6, 7, 8], 10, true);
     }
     
     function update() {
