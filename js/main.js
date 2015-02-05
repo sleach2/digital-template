@@ -50,39 +50,18 @@ window.onload = function() {
     }
     
     function update() {
-        // Accelerate the 'logo' sprite towards the cursor,
-        // accelerating at 500 pixels/second and moving no faster than 500 pixels/second
-        // in X or Y.
-        // This function returns the rotation angle that makes it visually match its
-        // new trajectory.
-        //bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
         game.physics.arcade.collide(player, platforms);
-        if (cursors.left.isDown)
-        {
-            //  Move to the left
+        if (cursors.left.isDown){
             player.body.velocity.x = -150;
-
             player.animations.play('left');
-        }   
-        else if (cursors.right.isDown)
-        {
-            //  Move to the right
+        }else if (cursors.right.isDown){
             player.body.velocity.x = 150;
-
             player.animations.play('right');
-        }
-        else
-        {
-            //  Stand still
+        }else{
             player.animations.stop();
-
             player.frame = 4;
-     }
-        
-        //  Allow the player to jump if they are touching the ground.
-        if (cursors.up.isDown && player.body.touching.down)
-     {
-         player.body.velocity.y = -350;
-     }
-    }
+        }
+        if (cursors.up.isDown && player.body.touching.down){
+            player.body.velocity.y = -350;
+        }
 };
