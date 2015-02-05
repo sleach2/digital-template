@@ -17,12 +17,12 @@ window.onload = function() {
     
     function preload() {
         // Load an image and call it 'logo'.
-        game.load.image( 'logo', 'assets/phaser.png' );
+        //game.load.image( 'logo', 'assets/phaser.png' );
         game.load.image('sky', 'assets/sky.png');
         game.load.image('ground', 'assets/platform.png');
     }
     
-    var bouncy;
+    //var bouncy;
     var platforms;
     
     function create() {
@@ -41,6 +41,6 @@ window.onload = function() {
         // in X or Y.
         // This function returns the rotation angle that makes it visually match its
         // new trajectory.
-        bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
+        //bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
     }
 };
