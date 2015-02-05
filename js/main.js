@@ -73,7 +73,7 @@ window.onload = function() {
             player.frame = 4;
         }
         if (cursors.up.isDown && player.body.touching.down){
-            player.body.velocity.y = -250;
+            player.body.velocity.y = -350;
         }
     }
 
