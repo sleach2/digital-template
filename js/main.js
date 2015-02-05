@@ -31,6 +31,7 @@ window.onload = function() {
     var dogs;
     var music;
     var count = 3;
+    var pos = 0;
     
     function create() {
         music=game.add.audio('boden');
@@ -60,8 +61,9 @@ window.onload = function() {
     function abc(){
         count++;
         for (var i = 0; i < count; i++){
-        var dog = dogs.create(i*140, 0, 'dog');
-        dog.body.gravity.y = 75;
+            pos+=30;
+            var dog = dogs.create(i*pos, 0, 'dog');
+            dog.body.gravity.y = 75;
         }
     }
 
