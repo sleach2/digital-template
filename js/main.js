@@ -20,7 +20,7 @@ window.onload = function() {
         //game.load.image( 'logo', 'assets/phaser.png' );
         game.load.image('sky', 'assets/sky.png');
         game.load.image('ground', 'assets/platform.png');
-        game.load.image('dog', 'assets/dog.png');
+        game.load.image('dogs', 'assets/dog.png');
         game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
     }
     
