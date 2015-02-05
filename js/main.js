@@ -51,8 +51,8 @@ window.onload = function() {
         cursors = game.input.keyboard.createCursorKeys();
         dogs = game.add.group();
         dogs.enableBody = true;
-        for (var i = 0; i < 12; i++){
-        var dog = dogs.create(i*70, 0, 'dog');
+        for (var i = 0; i < 6; i++){
+        var dog = dogs.create(i*140, 0, 'dog');
         dog.body.gravity.y = 150;
         }
         scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
@@ -63,10 +63,10 @@ window.onload = function() {
         game.physics.arcade.overlap(player, dogs, collectDogs, null, this);
         player.body.velocity.x = 0;
         if (cursors.left.isDown){
-            player.body.velocity.x = -150;
+            player.body.velocity.x = -250;
             player.animations.play('left');
         }else if (cursors.right.isDown){
-            player.body.velocity.x = 150;
+            player.body.velocity.x = 250;
             player.animations.play('right');
         }else{
             player.animations.stop();
