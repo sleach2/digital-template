@@ -44,6 +44,8 @@ window.onload = function() {
         player.body.collideWorldBounds = true;
         player.animations.add('left', [0, 1, 2, 3], 10, true);
         player.animations.add('right', [5, 6, 7, 8], 10, true);
+        scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+        cursors = game.input.keyboard.createCursorKeys();
     }
     
     function update() {
@@ -53,5 +55,33 @@ window.onload = function() {
         // This function returns the rotation angle that makes it visually match its
         // new trajectory.
         //bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
+        game.physics.arcade.collide(player, platforms);
+        if (cursors.left.isDown)
+        {
+            //  Move to the left
+            player.body.velocity.x = -150;
+
+            player.animations.play('left');
+        }   
+        else if (cursors.right.isDown)
+        {
+            //  Move to the right
+            player.body.velocity.x = 150;
+
+            player.animations.play('right');
+        }
+        else
+        {
+            //  Stand still
+            player.animations.stop();
+
+            player.frame = 4;
+     }
+        
+        //  Allow the player to jump if they are touching the ground.
+        if (cursors.up.isDown && player.body.touching.down)
+     {
+         player.body.velocity.y = -350;
+     }
     }
 };
