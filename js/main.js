@@ -47,12 +47,15 @@ window.onload = function() {
 
         dogs = game.add.group();
         dogs.enableBody = true;
+        dogs.setAll('outOfBoundsKill', true);
+        dogs.setAll('checkWorldBounds', true);
+
 
         game.time.events.repeat(Phaser.Timer.SECOND * 2, 10, abc, this);
         scoreText = game.add.text(16, 16, 'score: ' + score, { fontSize: '32px', fill: '#000' });
 
         timer = game.time.create(false);
-        timer.loop(4999, abc, this);
+        timer.loop(2000, abc, this);
         timer.start();
     }
     
@@ -69,10 +72,10 @@ window.onload = function() {
         game.physics.arcade.overlap(player, dogs, collectDogs, null, this);
         player.body.velocity.x = 0;
         if (cursors.left.isDown){
-            player.body.velocity.x = -250;
+            player.body.velocity.x = -500;
             player.animations.play('left');
         }else if (cursors.right.isDown){
-            player.body.velocity.x = 250;
+            player.body.velocity.x = 500;
             player.animations.play('right');
         }else{
             player.animations.stop();
