@@ -6,7 +6,7 @@ window.onload = function() {
     function preload() {
         game.load.image('sky', 'assets/sky.png');
         game.load.image('ground', 'assets/platform.png');
-        game.load.image('dog', 'assets/dog.png');
+        game.load.image('dog', 'assets/dog1.png');
         game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
         game.load.audio('boden', 'assets/audio/bodenstaendig_2000_in_rock_4bit.mp3');
     }
@@ -49,7 +49,7 @@ window.onload = function() {
         dogs.enableBody = true;
 
         game.time.events.repeat(Phaser.Timer.SECOND * 2, 10, abc, this);
-        scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+        scoreText = game.add.text(16, 16, 'score: ' + score, { fontSize: '32px', fill: '#000' });
     }
     
     function abc(){
