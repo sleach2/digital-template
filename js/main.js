@@ -19,6 +19,7 @@ window.onload = function() {
     var dogs;
     var music;
     var count = 2;
+    var timer;
     
     function create() {
         music=game.add.audio('boden');
@@ -49,6 +50,10 @@ window.onload = function() {
 
         game.time.events.repeat(Phaser.Timer.SECOND * 2, 10, abc, this);
         scoreText = game.add.text(16, 16, 'score: ' + score, { fontSize: '32px', fill: '#000' });
+
+        timer = game.time.create(false);
+        timer.loop(4999, abc, this);
+        timer.start();
     }
     
     function abc(){
