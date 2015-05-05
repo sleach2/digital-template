@@ -56,6 +56,7 @@ window.onload = function() {
 
         timer = game.time.create(false);
         timer.loop(2000, abc, this);
+        timer.loop(120000, end, this);
         timer.start();
     }
     
@@ -90,6 +91,12 @@ window.onload = function() {
     function collectDogs(player, dog) {
     dog.kill();
     score += 10;
-    //scoreText.text = 'score: ' + score;
+    }
+
+    function end(){
+        timer.stop();
+        dogs.forEachAlive(function(dog){dog.kill();},this);
+        game.input.disabled=true;
+        game.add.text(game.world.height/2, game.world.width/2, 'Game Over', { fontSize: '64px', fill: '#000' });
     }
 };
